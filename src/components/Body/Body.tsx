@@ -1,12 +1,20 @@
-import PaginaA from "./components/PaginaA/PaginaA";
-import PaginaB from "./components/PaginaB/PaginaB";
+import { useState } from "react";
 
-const Body = () => {
+import { ProvaContext } from "@/store/ProvaContext";
+
+const Body = ({ children }: any) => {
+  console.log("carico pagina Body");
+
+  const [state, setState] = useState(
+    "Valore iniziale context nel componente Body"
+  );
+
   return (
-    <>
-      <PaginaA />
-      <PaginaB />
-    </>
+    <div>
+      <ProvaContext.Provider value={{ state, setState }}>
+        {children}
+      </ProvaContext.Provider>
+    </div>
   );
 };
 

@@ -1,11 +1,15 @@
-import Layout from "./layout";
+import React from "react";
+import App from "./App";
+import { Provider } from "react-redux";
+import { storeName } from "@/store/store";
 
-const MyComponent = () => {
+const index = () => {
+  console.log("carico pagina Index");
   return (
-    <Layout>
-      <h1>my component</h1>
-    </Layout>
+    <Provider store={storeName}>
+      <App />
+    </Provider>
   );
 };
 
-export default MyComponent;
+export default index;
