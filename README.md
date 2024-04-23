@@ -1,2 +1,2 @@
 # Quickreact
-Quick fact, rte query, redux app for basic concept
+Quick react, rtk query, redux app for basic concept
