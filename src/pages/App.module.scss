@@ -1,11 +1,17 @@
-.example {
-  margin-bottom: 60px;
+.app {
+  display: flex;
+  flex-direction: column;
+  width: auto;
 
-  :not(h3) {
-    margin-left: 30px;
+  > * {
+    margin: 0 0 0 40px;
   }
 }
 
-.buttonPath {
-  margin-top: 40px;
+.component {
+  margin-top: 30px;
+
+  &__last {
+    margin: 30px 0 100px 40px;
+  }
 }

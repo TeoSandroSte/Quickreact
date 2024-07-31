@@ -8,17 +8,19 @@ const Dispatch = () => {
   console.log("carico Dispatch");
 
   const dispatch = useDispatch();
+
   const incrementHandler = () => {
     dispatch(increment());
   };
+
   const decrementHandler = () => {
     dispatch(decrement());
   };
 
   return (
     <>
-      <button onClick={incrementHandler}>Increment</button>
       <button onClick={decrementHandler}>Decrement</button>
+      <button onClick={incrementHandler}>Increment</button>
     </>
   );
 };

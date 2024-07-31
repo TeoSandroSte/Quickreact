@@ -1,13 +1,13 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import counterReducer from "./slices/counter/counterSlice.slice";
+import pokemonReducer from "./slices/pokemon/pokemonSlice.slice";
 
 import { pokemonApi } from "./api/pokemon/pokemon.api";
-import pokemonSlice from "./slices/pokemon/pokemon.slice";
 
 export const storeName = configureStore({
   reducer: combineReducers({
     counter: counterReducer,
-    pokemonSlice: pokemonSlice,
+    pokemonSlice: pokemonReducer,
     [pokemonApi.reducerPath]: pokemonApi.reducer,
   }),
   middleware: (getDefaultMiddleware) =>

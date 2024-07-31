@@ -1,12 +1,12 @@
 import { pokemonApi } from "@/store/api/pokemon/pokemon.api";
 import { createSlice } from "@reduxjs/toolkit";
-import { Pokemon } from "./pokemon.interface";
+import { IPokemon } from "./pokemon.interface";
 
-interface IPokemon {
-  pokemon: Pokemon | undefined;
+interface IPokemonState {
+  pokemon: IPokemon | undefined;
 }
 
-const initialState: IPokemon = {
+const initialState: IPokemonState = {
   pokemon: undefined,
 };
 

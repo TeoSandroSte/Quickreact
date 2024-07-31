@@ -1,0 +1,13 @@
+$color-violet: #9d87be;
+$color-white: #ffffff;
+
+$colors: (
+  color-violet: $color-violet,
+  color-white: $color-white,
+);
+
+:export {
+  @each $colorName, $color in $colors {
+    #{$colorName}: $color;
+  }
+}

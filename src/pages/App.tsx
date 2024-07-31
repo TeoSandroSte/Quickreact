@@ -1,54 +1,36 @@
-import Body from "@/components/Body/Body";
-import ContextSetTimeout from "@/components/Body/components/ContextSetTimeout/ContextSetTimeout";
-import ContextValueAndSet from "@/components/Body/components/ContextValueAndSet/ContextValueAndSet";
-import Dispatch from "@/components/Body/components/Dispatch/Dispatch";
-import Pokemon from "@/components/Body/components/Pokemon/Pokemon";
-import PokemonStore from "@/components/Body/components/PokemonStore/PokemonStore";
-import Footer from "@/components/Footer/Footer";
-import { RootState } from "@/store/store";
 import React from "react";
-import { useSelector } from "react-redux";
 import styles from "./App.module.scss";
-import { useRouter } from "next/router";
+import ContextStore from "@/components/ContextStore/ContextStore";
+import OutsideContextStore from "@/components/OutsideContextStore/OutsideContextStore";
+import CounterStore from "@/components/CounterStore/CounterStore";
+import RTKQuery from "@/components/RTKQuery/RTKQuery";
+import ChangePath from "@/components/ChangePath/ChangePath";
+import JSApiCall from "@/components/JSApiCall/JSApiCall";
+import AppStructure from "@/components/AppStructure/AppStructure";
 
 const App = () => {
   console.log("carico pagina App");
-  const router = useRouter();
-
-  const counter = useSelector((state: RootState) => state.counter.value);
-  const goToPath = () => {
-    router.push("/path");
-  };
 
   return (
-    <>
-      <Body>
-        <div className={styles.example}>
-          <h3>Context Example:</h3>
-          <ContextSetTimeout />
-          <ContextValueAndSet />
-        </div>
+    <div className={styles.app}>
+      <h2 className={styles.component}>
+        Apri la console per seguire i caricamenti dei componenti
+      </h2>
 
-        <div className={styles.example}>
-          <h3>Store Example:</h3>
-          <p>Lo store parte da -5: {counter}</p>
-          <Dispatch />
-        </div>
+      <RTKQuery />
 
-        <div className={styles.example}>
-          <h3>RTK Query Example:</h3>
-          <Pokemon />
-          <PokemonStore />
-        </div>
-      </Body>
+      <JSApiCall />
 
-      <Footer />
+      <CounterStore />
 
-      <br />
-      <button className={styles.buttonPath} onClick={goToPath}>
-        Vai alla pagina Path
-      </button>
-    </>
+      <ContextStore />
+
+      <OutsideContextStore />
+
+      <ChangePath />
+
+      <AppStructure />
+    </div>
   );
 };
 

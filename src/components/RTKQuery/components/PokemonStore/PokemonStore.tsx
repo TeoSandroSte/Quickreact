@@ -1,5 +1,5 @@
 import { RootState } from "@/store/store";
-import React from "react";
+import React, { Fragment } from "react";
 import { useSelector } from "react-redux";
 
 const PokemonStore = () => {
@@ -8,10 +8,12 @@ const PokemonStore = () => {
   const { pokemonSlice } = useSelector((state: RootState) => state);
 
   return (
-    <>
-      <br />
-      <span>{pokemonSlice.pokemon?.name}</span>
-    </>
+    <div>
+      <p>Valore preso dal Pokemon Store: </p>
+      <p>
+        <i>{pokemonSlice.pokemon?.name}</i>
+      </p>
+    </div>
   );
 };
 

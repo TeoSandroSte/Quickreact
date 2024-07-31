@@ -1,0 +1,9 @@
+@import "../../styles/colors.module.scss";
+
+.header {
+  background-color: $color-violet;
+  padding: 20px 16px;
+  > button {
+    margin-right: 8px;
+  }
+}

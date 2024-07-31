@@ -5,8 +5,11 @@ import { storeName } from "@/store/store";
 
 const index = () => {
   console.log("carico pagina Index");
+
   return (
     <Provider store={storeName}>
+      <title>Homepage Pages Pokemon</title>
+
       <App />
     </Provider>
   );
